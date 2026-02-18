@@ -1,0 +1,4 @@
+- built a 2D arcade survival game with player block and enemy block
+- emeny block spawns at random points on the x axis
+- player block can move in cardinal directions using the arrow keys
+- collision detection implemented to end the game on object collision
