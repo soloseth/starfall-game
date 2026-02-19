@@ -9,6 +9,15 @@ height = 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("My First Python Game")
 
+background_img = pygame.image.load("background.png").convert()
+player_img =pygame.image.load("player img.png").convert_alpha()
+enemy_img = pygame.image.load("enemy.png").convert_alpha()
+
+player_img = pygame.transform.scale(player_img, (50, 50))
+enemy_img = pygame.transform.scale(enemy_img, (50, 50))
+background_img = pygame.transform.scale(background_img, (width, height))
+
+
 #player
 player_size = 50
 player_x = width // 2
@@ -20,6 +29,8 @@ enemy_size = 50
 enemy_x = 400
 enemy_y = 0
 enemy_speed = 4
+
+start_button = 
 
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 40)
@@ -49,14 +60,15 @@ while running:
 
     if enemy_y > height:
         enemy_y = 0
-        enemy_x = random.randint(0, 800)
+        enemy_x = random.randint(0, 750)
         score += 1
 
 
-    screen.fill((60, 30, 30))
+    screen.blit(background_img, (0, 0))
 
-    pygame.draw.rect(screen, (0, 225, 0), (player_x, player_y, player_size, player_size)) # RGB value: green
-    pygame.draw.rect(screen, (255, 0, 0),(enemy_x, enemy_y, enemy_size, enemy_size))
+    screen.blit(player_img, (player_x, player_y))
+    screen.blit(enemy_img, (enemy_x, enemy_y))
+
 
     player_rect = pygame.Rect(player_x, player_y, player_size, player_size)
     enemy_rect = pygame.Rect(enemy_x, enemy_y, enemy_size, enemy_size)
