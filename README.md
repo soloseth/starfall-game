@@ -3,3 +3,4 @@
 - player block can move in cardinal directions using the arrow keys
 - collision detection implemented to end the game on object collision
 - added background, player image and enemy image
+- added functional score counter and level system with increasing enemy speed
